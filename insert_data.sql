@@ -1,3 +1,4 @@
+-- Inserting data into tsao_accounts
 INSERT INTO tsao_accounts (ID, Name, Username, Password, Role, CreationDate, IsApproved, IsDeleted) 
 VALUES 
     (1, 'Ben Low', 'lkh2', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 'Administrator', '2024-01-01 12:00:00', true, false), 		-- password
@@ -7,8 +8,8 @@ VALUES
 	(5, 'Deleted User', 'dui', '1185f37d33b0f89e331f101a51bb8e51165c7efda15950b86a3ebcbb363f898e', 'User', '2024-01-01 10:00:00', true, true);              -- deleted
 
 -- Inserting data into tsao_records
-INSERT INTO tsao_records (ID, AccountID, ContactRole, StudentCount, AcadYear, Title, CompanyName, CompanyPOC, Description, IsDeleted) 
+INSERT INTO tsao_records (ID, AccountID, ContactRole, StudentCount, AcadYear, Title, CompanyName, CompanyPOC, Description, CreationDate, IsDeleted) 
 VALUES 
-    (1, 1, 'Staff', 3, '2023/24', 'Gen AI Hub Project 1', 'NP School of ICT R&D', 'Er Poi Voon', 'Description for Gen AI Hub Project 1', false),
-    (2, 1, 'Student', 5, '2023/24', 'TSAO Records System', 'NP School of ICT DevOps', 'Ben Low', 'Description for TSAO Records System', false),
-    (3, 2, 'Staff', 2, '2023/24', 'Quantum Computing POC', 'IBM', 'John Law', 'Description for Quantum Computing POC', false);
+    (1, 1, 'Staff', 3, '2023/24', 'Gen AI Hub Project 1', 'NP School of ICT R&D', 'Er Poi Voon', 'Description for Gen AI Hub Project 1', '2024-01-12 12:00:00', false),
+    (2, 1, 'Student', 5, '2023/24', 'TSAO Records System', 'NP School of ICT DevOps', 'Ben Low', 'Description for TSAO Records System', '2024-01-12 12:00:00', false),
+    (3, 2, 'Staff', 2, '2023/24', 'Quantum Computing POC', 'IBM', 'John Law', 'Description for Quantum Computing POC', '2024-01-12 12:00:00', false);

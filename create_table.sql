@@ -21,6 +21,7 @@ CREATE TABLE tsao_records (ID					int NOT NULL PRIMARY KEY auto_increment,
                            CompanyName			varchar(100) NOT NULL,
                            CompanyPOC			varchar(100) NOT NULL,
                            Description			varchar(500) NOT NULL,
+                           CreationDate         datetime NOT NULL,
                            IsDeleted			bool NOT NULL,
 						   CONSTRAINT FK_Records_Account FOREIGN KEY (AccountID) REFERENCES tsao_accounts(ID)
 						   );
