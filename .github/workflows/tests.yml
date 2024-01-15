@@ -43,22 +43,13 @@ jobs:
         run: |
           pip install robotframework
           pip install robotframework-databaselibrary
+          pip install mysql-connector-python
         working-directory: ${{ github.workspace }}
 
-      - name: "[Testing] Run Chrome Robot Framework Tests"
+      - name: "[Testing] Run Robot Framework Tests"
         run: |
           robot -v DB_NAME:tsao -v DB_USER:root -v DB_PASSWORD:root --outputdir results/ tests/tests.robot
         working-directory: ${{ github.workspace }}
-      # - name: Install Firefox
-      #   uses: browser-actions/setup-firefox@latest
-      # - name: Install Geckodriver
-      #   uses: browser-actions/setup-geckodriver@latest
-      #   with:
-      #     geckodriver-version: '0.34.0'
-      # - name: Run Firefox Robot Framework Tests
-      #   run: |
-      #     robot -v BROWSER:firefox tests/test.robot
-      #   working-directory: ${{ github.workspace }}
       - name: "[Testing] Upload Testing Artifacts"
         uses: actions/upload-artifact@v2
         with:
