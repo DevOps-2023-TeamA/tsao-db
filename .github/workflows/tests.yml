@@ -48,7 +48,7 @@ jobs:
 
       - name: "[Testing] Run Robot Framework Tests"
         run: |
-          robot -v DB_NAME:user -v DB_USER:root -v DB_PASSWORD:root --outputdir results/ tests/tests.robot
+          robot -v DB_HOST:localhost -v DB_TYPE:pymysql -v DB_NAME:user -v DB_USER:root -v DB_PASSWORD:root --outputdir results/ tests/tests.robot
         working-directory: ${{ github.workspace }}
       - name: "[Testing] Upload Testing Artifacts"
         uses: actions/upload-artifact@v2
