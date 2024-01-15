@@ -1,5 +1,4 @@
 CREATE database tsao;
-DROP database tsao;
 
 USE tsao;
 CREATE TABLE tsao_accounts (ID 					int NOT NULL PRIMARY KEY auto_increment, 
