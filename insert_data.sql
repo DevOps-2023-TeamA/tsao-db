@@ -1,3 +1,5 @@
+USE tsao;
+
 -- Inserting data into tsao_accounts
 INSERT INTO tsao_accounts (ID, Name, Username, Password, Role, CreationDate, IsApproved, IsDeleted) 
 VALUES 
