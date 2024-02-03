@@ -17,5 +17,4 @@ jobs:
           content: "<@&1203218591647010876>"
           username: "TSAO-DB"
           embed-title: "{{ github.event.release.name }}"
-          embed-url: github.event.release.zipball_url
           embed-description: "A new release for [tsao-db](https://github.com/DevOps-2023-TeamA/tsao-db) is now available."
