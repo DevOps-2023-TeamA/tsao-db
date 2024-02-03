@@ -48,7 +48,13 @@ jobs:
 
       - name: "[Testing] Run Robot Framework Tests"
         run: |
-          robot -v DB_NAME:tsao -v DB_USER:root -v DB_PASSWORD:root --outputdir results/ tests/tests.robot
+          for file in tests/*.robot; do
+            if [ -f "$file" ]; then
+              echo "Result of $file"
+              robot -v DB_NAME:tsao -v DB_USER:root -v DB_PASSWORD:root --outputdir results/ $file
+              echo "-----------------------------------"
+            fi
+          done
         working-directory: ${{ github.workspace }}
       - name: "[Testing] Upload Testing Artifacts"
         uses: actions/upload-artifact@v2
