@@ -1,4 +1,4 @@
-# tsao database
+# TSAO Database
 ## contents
 - [setup MySQL database](#setup-mqsql-database)
 - [create account](#create-account)
@@ -63,3 +63,11 @@ git clone "https://github.com/DevOps-2023-TeamA/tsao-db.git"
 ![image](https://github.com/DevOps-2023-TeamA/tsao-db/assets/92766974/b0ed0bde-8e29-4779-8650-fef47c363662)
 
 > ✅ You have completed the TSAO database setup!
+
+
+## Maintatiners
+- [Yee Jia Chen](https://github.com/jiachenyee) S10219344C
+- [Isabelle Pak Yi Shan](https://github.com/isabellepakyishan) S10222456J
+- [Ho Kuan Zher](https://github.com/Kuan-Zher) S10223870D
+- [Cheah Seng Jun](https://github.com/DanielCheahSJ) S10227333K
+- [Chua Guo Jun](https://github.com/GuojunLoser) s10227743H
