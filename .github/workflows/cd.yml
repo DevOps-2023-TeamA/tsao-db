@@ -9,6 +9,8 @@ on:
 jobs:
   notify-discord:
     runs-on: ubuntu-latest
+    environment:
+      name: Configure Discord
     steps:
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.4.0
