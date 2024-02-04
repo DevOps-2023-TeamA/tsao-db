@@ -12,6 +12,10 @@ jobs:
     environment:
       name: Configure Discord
     steps:
+      - name: Test Webhook
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: echo ${{ env.DISCORD_WEBHOOK_URL }}
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.4.0
         env:
