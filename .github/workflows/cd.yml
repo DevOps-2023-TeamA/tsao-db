@@ -20,4 +20,7 @@ jobs:
           username: "TSAO-DB Releases"
           embed-title: ${{ github.event.release.name }}
           embed-description: |
-            Download it [here](${{ github.event.release.html_url }})!
+            ${{ github.event.release.body }}
+
+            ---
+            Download it [here](${{ github.event.release.html_url }}).
