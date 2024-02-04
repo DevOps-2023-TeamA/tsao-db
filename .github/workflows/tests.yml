@@ -62,3 +62,19 @@ jobs:
         with:
           name: selenium-artifacts
           path: results/
+      - name: "[Reporting] Report status to webhook"
+        if: success()
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GH_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/DevOps-2023-TeamA/tsao-tests/actions/workflows/84816007/dispatches \
+          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${GITHUB_RUN_ID}", "success": "true"}}'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: "[Reporting] Report status to webhook"
+        if: failure()
+        run: |
+          curl -X POST -H "Authorization: token ${{ secrets.GH_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/DevOps-2023-TeamA/tsao-tests/actions/workflows/84816007/dispatches \
+          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${GITHUB_RUN_ID}", "success": "false"}}'
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
