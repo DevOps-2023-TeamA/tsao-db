@@ -58,6 +58,7 @@ jobs:
           done
         working-directory: ${{ github.workspace }}
       - name: "[Testing] Upload Testing Artifacts"
+        if: always()
         uses: actions/upload-artifact@v2
         with:
           name: selenium-artifacts
