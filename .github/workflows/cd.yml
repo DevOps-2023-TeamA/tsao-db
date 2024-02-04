@@ -12,8 +12,10 @@ jobs:
     steps:
       - name: Discord Webhook Action
         uses: tsickert/discord-webhook@v5.4.0
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          webhook-url: $DISCORD_WEBHOOK_URL
           content: "<@&1203218591647010876>"
           # username: "TSAO-DB"
           # embed-title: ${{ github.event.release.name }}
