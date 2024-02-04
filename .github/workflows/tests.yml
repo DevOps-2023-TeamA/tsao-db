@@ -67,7 +67,7 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.GH_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/DevOps-2023-TeamA/tsao-tests/actions/workflows/84816007/dispatches \
-          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${GITHUB_RUN_ID}", "success": "true"}}'
+          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}", "success": "true"}}'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: "[Reporting] Report status to webhook"
@@ -75,6 +75,6 @@ jobs:
         run: |
           curl -X POST -H "Authorization: token ${{ secrets.GH_TOKEN }}" -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/DevOps-2023-TeamA/tsao-tests/actions/workflows/84816007/dispatches \
-          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${GITHUB_RUN_ID}", "success": "false"}}'
+          -d '{"ref":"main", "inputs": {"sender":"tsao-db", "resultsURL":"https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}", "success": "false"}}'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
