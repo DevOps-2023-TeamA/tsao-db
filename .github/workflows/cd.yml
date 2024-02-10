@@ -3,6 +3,8 @@ name: Discord Notification
 on:
   release:
     types: [published]
+  push:
+    branches: ["actions/**"]
 
 jobs:
   notify-discord:
@@ -24,3 +26,11 @@ jobs:
 
             ---
             Download it [here](${{ github.event.release.html_url }}).
+      - name: Send Email to Stakeholders
+        env:
+          SENDGRID_EMAILS: ${{ secrets.SENDGRID_EMAILS }}
+          SENDGRID_TOKEN: ${{ secrets.SENDGRID_TOKEN }}
+        run: |
+          git clone https://github.com/DevOps-2023-TeamA/tsao-pipeline-emails
+          echo "${{ github.event.release.body }}" > changelog.txt
+          python main.py $SENDGRID_TOKEN $SENDGRID_EMAILS
