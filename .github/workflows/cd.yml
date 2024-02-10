@@ -32,5 +32,6 @@ jobs:
           SENDGRID_TOKEN: ${{ secrets.SENDGRID_TOKEN }}
         run: |
           git clone https://github.com/DevOps-2023-TeamA/tsao-pipeline-emails
+          cd tsao-pipeline-emails
           echo "${{ github.event.release.body }}" > changelog.txt
           python main.py $SENDGRID_TOKEN $SENDGRID_EMAILS
